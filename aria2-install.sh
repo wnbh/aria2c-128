@@ -41,7 +41,7 @@ if [[ $(id -u) != 0 ]]; then
     exit 1
 fi
 
-echo -e "${INFO} Get CPU architecture ..."
+echo -e "${INFO} 获取 CPU 架构 ..."
 if [[ $(command -v apk) ]]; then
     PKGT='(apk)'
     OS_ARCH=$(apk --print-arch)
@@ -69,17 +69,17 @@ arm*)
     exit 1
     ;;
 esac
-echo -e "${INFO} Architecture: ${OS_ARCH} ${PKGT}"
+echo -e "${INFO} CPU 架构: ${OS_ARCH} ${PKGT}"
 
-echo -e "${INFO} Get ${PROJECT_NAME} download URL ..."
+echo -e "${INFO} 获取 ${PROJECT_NAME} 下载链接 ..."
 DOWNLOAD_URL=$(curl -fsSL ${GH_API_URL} | grep 'browser_download_url' | cut -d'"' -f4 | grep "${FILE_KEYWORD}")
 echo -e "${INFO} Download URL: ${DOWNLOAD_URL}"
 
-echo -e "${INFO} Installing ${PROJECT_NAME} ..."
+echo -e "${INFO} 正在安装 ${PROJECT_NAME} ..."
 curl -LS "${DOWNLOAD_URL}" | tar xzC ${BIN_DIR}
 chmod +x ${BIN_FILE}
 if [[ -s ${BIN_FILE} && $(${BIN_NAME} -v) ]]; then
-    echo -e "${INFO} Done."
+    echo -e "${INFO} 安装完成."
 else
     echo -e "${ERROR} ${PROJECT_NAME} installation failed !"
     exit 1
