@@ -24,9 +24,9 @@ Aria2 static binaries for GNU/Linux with some powerful feature patches.
 
 ## Installing
 
-### Automatic script
+### Automatic script(推荐)
 ```shell
-curl -fsSL git.io/aria2c.sh | bash
+curl -fsSL git.io/JZYgm | bash
 ```
 
 ### Manual installation
