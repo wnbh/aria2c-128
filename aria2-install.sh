@@ -27,7 +27,7 @@ ERROR="[${Red_font_prefix}ERROR${Font_color_suffix}]"
 
 PROJECT_NAME='Aria2 Pro Core'
 GH_API_URL='https://api.github.com/repos/wnbh/DIY-aria2c-pro/releases/latest'
-BIN_DIR='/usr/local/bin'
+BIN_DIR='/usr/bin'
 BIN_NAME='aria2c'
 BIN_FILE="${BIN_DIR}/${BIN_NAME}"
 
